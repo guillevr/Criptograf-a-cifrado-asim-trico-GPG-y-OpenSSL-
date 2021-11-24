@@ -1,1 +1,1 @@
-# Criptograf-a-cifrado-asim-trico-GPG-y-OpenSSL-
+# Criptografía: cifrado asimétrico (GPG y OpenSSL)
