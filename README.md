@@ -20,3 +20,15 @@ En cuando a requisitos que deba de cumplir el equipo no hay.
 Lo primero que debemos de hacer es crear un par de claves (una pública y una privada) en el equipo emisor y en el equipo receptor.
 
 Para ello, ejecutaremos el comando **gpg --gen-key**.
+
+### Equipo emisor
+> guillevr@emisor:~$ gpg --gen-key
+> gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.
+> This is free software: you are free to change and redistribute it.
+> There is NO WARRANTY, to the extent permitted by law.
+> 
+> Nota: Usa "gpg --full-generate-key" para el diálogo completo de generación de clave.
+> 
+> GnuPG debe construir un ID de usuario para identificar su clave.
+> 
+> Nombre y apellidos: 
