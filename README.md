@@ -23,12 +23,13 @@ Para ello, ejecutaremos el comando **gpg --gen-key**.
 
 ### Equipo emisor
 > guillevr@emisor:~$ gpg --gen-key
+
 > gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.
 > This is free software: you are free to change and redistribute it.
 > There is NO WARRANTY, to the extent permitted by law.
-> 
+>
 > Nota: Usa "gpg --full-generate-key" para el diálogo completo de generación de clave.
-> 
+>
 > GnuPG debe construir un ID de usuario para identificar su clave.
-> 
-> Nombre y apellidos: 
+>
+> Nombre y apellidos:
