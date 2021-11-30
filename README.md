@@ -32,4 +32,4 @@ Para ello, ejecutaremos el comando **gpg --gen-key**.
 >
 > GnuPG debe construir un ID de usuario para identificar su clave.
 >
-> Nombre y apellidos:
+> Nombre y apellidos:**Emisor Garcia Moreno**
