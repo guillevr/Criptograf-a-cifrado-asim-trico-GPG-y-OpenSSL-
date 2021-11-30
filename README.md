@@ -23,7 +23,7 @@ Para ello, ejecutaremos el comando **gpg --gen-key**.
 
 ### Equipo emisor
 > guillevr@emisor:~$ gpg --gen-key
-
+>
 > gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.
 > This is free software: you are free to change and redistribute it.
 > There is NO WARRANTY, to the extent permitted by law.
