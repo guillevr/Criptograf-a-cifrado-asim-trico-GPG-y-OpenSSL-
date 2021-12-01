@@ -62,7 +62,6 @@ Nuestro par de claves se ha generado y añadido con confianza absoluta a nuestro
 ### Listar las claves **públicas** que tenemos en nuestro almacen de claves del equipo emisor.
 
 Para listar las claves **públicas** ejecutaremos el comando **gpg --list-key**.
-asdas
 
 > guillevr@emisor:~$ gpg --list-key
 > gpg: comprobando base de datos de confianza
@@ -79,7 +78,6 @@ asdas
 ### Listar las claves **privadas** que tenemos en nuestro almacen de claves del equipo emisor.
 
 Para listar las claves **privadas** ejecutaremos el comando **gpg --list-secret-key**.
-Pureba
 
 > guillevr@emisor:~$ gpg --list-secret-key
 > /home/guillevr/.gnupg/pubring.kbx
@@ -88,6 +86,10 @@ Pureba
 >       DC435E571ECA4461419C43BA0CC8CFD955118B0D
 > uid        [  absoluta ] Emisor Garcia Moreno <emisor@gmail.com>
 > ssb   rsa3072 2021-11-30 [E] [caduca: 2023-11-30]
+
+
+
+
 
 **-----------------------------------------------------------------------------**
 **---------------         FALTA POR HACER                 ---------------------**
