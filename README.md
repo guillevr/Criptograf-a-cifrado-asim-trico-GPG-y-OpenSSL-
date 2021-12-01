@@ -21,7 +21,9 @@ Lo primero que debemos de hacer es crear un par de claves (una pública y una pr
 
 Para ello, ejecutaremos el comando **gpg --gen-key**.
 
-### Equipo emisor
+Indicaremos nuestro nombre y apellidos y una direccion de correo.
+
+### Generar clave en el equipo emisor
 > guillevr@emisor:~$ gpg --gen-key
 >
 > gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.
@@ -32,4 +34,27 @@ Para ello, ejecutaremos el comando **gpg --gen-key**.
 >
 > GnuPG debe construir un ID de usuario para identificar su clave.
 >
-> Nombre y apellidos:**Emisor Garcia Moreno**
+> Nombre y apellidos: **Emisor Garcia Moreno**
+> Dirección de correo electrónico: **emisor@gmail.com**
+> Ha seleccionado este ID de usuario:
+>     "Emisor Garcia Moreno <emisor@gmail.com>"
+
+Si todo está correcto y no hay que modificar nada, introduciremos la letra **v**
+
+> ¿Cambia (N)ombre, (D)irección o (V)ale/(S)alir? v
+
+A continuación nos pedirá una contraseña de paso para proteger nuestra clave privada.
+
+# Añadir IMAGEN FRASE DE PASO
+
+> gpg: clave 0CC8CFD955118B0D marcada como de confianza absoluta
+> gpg: creado el directorio '/home/guillevr/.gnupg/openpgp-revocs.d'
+> gpg: certificado de revocación guardado como '/home/guillevr/.gnupg/openpgp-revocs.d/> DC435E571ECA4461419C43BA0CC8CFD955118B0D.rev'
+> claves pública y secreta creadas y firmadas.
+>
+> pub   rsa3072 2021-11-30 [SC] [caduca: 2023-11-30]
+>       DC435E571ECA4461419C43BA0CC8CFD955118B0D
+> uid                      Emisor Garcia Moreno <emisor@gmail.com>
+> sub   rsa3072 2021-11-30 [E] [caduca: 2023-11-30]
+
+Nuestro par de claves se ha generado y añadido con confianza absoluta a nuestro keyring **pubring.kbx** (se encuentra almacenado en nuestro directorio personal, dentro de un directorio llamado .gnupg/). Además, ha generado de forma automática un certificado de revocación dentro de **.gnupg/openpgp-revocs.d/** por si nuestra clave privada llegase a malas manos o simplemente quisiésemos dejar de utilizar dicho par de claves, de manera que se notificará a otros usuarios que la clave pública no debe ser usada nunca más para cifrar.
