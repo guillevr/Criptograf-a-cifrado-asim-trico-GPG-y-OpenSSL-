@@ -23,7 +23,7 @@ Para ello, ejecutaremos el comando **gpg --gen-key**.
 
 Indicaremos nuestro nombre y apellidos y una direccion de correo.
 
-### Generar clave en el equipo emisor
+### Generar clave pública en el equipo emisor
 > guillevr@emisor:~$ gpg --gen-key
 >
 > gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.
@@ -39,7 +39,7 @@ Indicaremos nuestro nombre y apellidos y una direccion de correo.
 > Ha seleccionado este ID de usuario:
 >     "Emisor Garcia Moreno <emisor@gmail.com>"
 
-Si todo está correcto y no hay que modificar nada, introduciremos la letra **v**
+Si todo está correcto y no hay que modificar nada, introduciremos la letra **v.**
 
 > ¿Cambia (N)ombre, (D)irección o (V)ale/(S)alir? v
 
@@ -58,3 +58,66 @@ A continuación nos pedirá una contraseña de paso para proteger nuestra clave 
 > sub   rsa3072 2021-11-30 [E] [caduca: 2023-11-30]
 
 Nuestro par de claves se ha generado y añadido con confianza absoluta a nuestro keyring **pubring.kbx** (se encuentra almacenado en nuestro directorio personal, dentro de un directorio llamado .gnupg/). Además, ha generado de forma automática un certificado de revocación dentro de **.gnupg/openpgp-revocs.d/** por si nuestra clave privada llegase a malas manos o simplemente quisiésemos dejar de utilizar dicho par de claves, de manera que se notificará a otros usuarios que la clave pública no debe ser usada nunca más para cifrar.
+
+#### Listar las claves **públicas** que tenemos en nuestro almacen de claves.
+
+Para listar las claves **públicas** ejecutaremos el comando **gpg --list-key**.
+
+> guillevr@emisor:~$ gpg --list-key
+> gpg: comprobando base de datos de confianza
+> gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+> gpg: nivel: 0  validez:   1  firmada:   0  confianza: 0-, 0q, 0n, 0m, 0f, 1u
+> gpg: siguiente comprobación de base de datos de confianza el: 2023-11-30
+> /home/guillevr/.gnupg/pubring.kbx
+> ---------------------------------
+> pub   rsa3072 2021-11-30 [SC] [caduca: 2023-11-30]
+>       DC435E571ECA4461419C43BA0CC8CFD955118B0D
+> uid        [  absoluta ] Emisor Garcia Moreno <emisor@gmail.com>
+> sub   rsa3072 2021-11-30 [E] [caduca: 2023-11-30]
+
+#### Listar las claves **privadas** que tenemos en nuestro almacen de claves.
+
+Para listar las claves **privadas** ejecutaremos el comando **gpg --list-secret-key**.
+
+> guillevr@emisor:~$ gpg --list-secret-key
+> /home/guillevr/.gnupg/pubring.kbx
+> ---------------------------------
+> sec   rsa3072 2021-11-30 [SC] [caduca: 2023-11-30]
+>       DC435E571ECA4461419C43BA0CC8CFD955118B0D
+> uid        [  absoluta ] Emisor Garcia Moreno <emisor@gmail.com>
+> ssb   rsa3072 2021-11-30 [E] [caduca: 2023-11-30]
+
+**-----------------------------------------------------------------------------**
+**---------------         FALTA POR HACER                 ---------------------**
+**-----------------------------------------------------------------------------**
+
+### Generar clave pública en el equipo emisor
+
+Si todo está correcto y no hay que modificar nada, introduciremos la letra **v.**
+
+A continuación nos pedirá una contraseña de paso para proteger nuestra clave privada.
+
+# Añadir IMAGEN FRASE DE PASO
+
+
+#### Listar las claves **públicas** que tenemos en nuestro almacen de claves.
+Para listar las claves **públicas** ejecutaremos el comando **gpg --list-key**.
+
+#### Listar las claves **privadas** que tenemos en nuestro almacen de claves.
+Para listar las claves **privadas** ejecutaremos el comando **gpg --list-secret-key**.
+
+**-----------------------------------------------------------------------------**
+**-----------------------------------------------------------------------------**
+**-----------------------------------------------------------------------------**
+
+
+## ¿Que información vemos cuando listamos las claves públicas y privadas?
+
+- Claves públicas:
+    - **pub** -> public primary key
+    - **uid** -> unique identifier
+    - **sub** -> public sub-key
+- Claves privadas:
+    - **sec** -> secret primary key
+    - **uid** -> unique identifier
+    - **ssb** -> secret sub-key
