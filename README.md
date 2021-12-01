@@ -59,7 +59,7 @@ A continuación nos pedirá una contraseña de paso para proteger nuestra clave 
 
 Nuestro par de claves se ha generado y añadido con confianza absoluta a nuestro keyring **pubring.kbx** (se encuentra almacenado en nuestro directorio personal, dentro de un directorio llamado .gnupg/). Además, ha generado de forma automática un certificado de revocación dentro de **.gnupg/openpgp-revocs.d/** por si nuestra clave privada llegase a malas manos o simplemente quisiésemos dejar de utilizar dicho par de claves, de manera que se notificará a otros usuarios que la clave pública no debe ser usada nunca más para cifrar.
 
-#### Listar las claves **públicas** que tenemos en nuestro almacen de claves.
+#### Listar las claves **públicas** que tenemos en nuestro almacen de claves en el equipo emisor.
 
 Para listar las claves **públicas** ejecutaremos el comando **gpg --list-key**.
 
@@ -75,7 +75,7 @@ Para listar las claves **públicas** ejecutaremos el comando **gpg --list-key**.
 > uid        [  absoluta ] Emisor Garcia Moreno <emisor@gmail.com>
 > sub   rsa3072 2021-11-30 [E] [caduca: 2023-11-30]
 
-#### Listar las claves **privadas** que tenemos en nuestro almacen de claves.
+#### Listar las claves **privadas** que tenemos en nuestro almacen de claves en el equipo emisor.
 
 Para listar las claves **privadas** ejecutaremos el comando **gpg --list-secret-key**.
 
@@ -91,7 +91,7 @@ Para listar las claves **privadas** ejecutaremos el comando **gpg --list-secret-
 **---------------         FALTA POR HACER                 ---------------------**
 **-----------------------------------------------------------------------------**
 
-### Generar clave pública en el equipo emisor
+### Generar clave pública en el equipo receptor
 
 Si todo está correcto y no hay que modificar nada, introduciremos la letra **v.**
 
@@ -100,10 +100,10 @@ A continuación nos pedirá una contraseña de paso para proteger nuestra clave 
 # Añadir IMAGEN FRASE DE PASO
 
 
-#### Listar las claves **públicas** que tenemos en nuestro almacen de claves.
+#### Listar las claves **públicas** que tenemos en nuestro almacen de claves en el equipo receptor.
 Para listar las claves **públicas** ejecutaremos el comando **gpg --list-key**.
 
-#### Listar las claves **privadas** que tenemos en nuestro almacen de claves.
+#### Listar las claves **privadas** que tenemos en nuestro almacen de claves en el equipo receptor.
 Para listar las claves **privadas** ejecutaremos el comando **gpg --list-secret-key**.
 
 **-----------------------------------------------------------------------------**
@@ -114,10 +114,16 @@ Para listar las claves **privadas** ejecutaremos el comando **gpg --list-secret-
 ## ¿Que información vemos cuando listamos las claves públicas y privadas?
 
 - Claves públicas:
-    - **pub** -> public primary key
-    - **uid** -> unique identifier
-    - **sub** -> public sub-key
+    - **pub** (public primary key) -> Información sobre par de claves publicas maestro.
+    - **uid** (unique identifier) -> Información sobre la identidad del usuario en concreto (user-ID)
+    - **sub** (public sub-key) -> Información sobre par de claves publicas secundario.
 - Claves privadas:
-    - **sec** -> secret primary key
-    - **uid** -> unique identifier
-    - **ssb** -> secret sub-key
+    - **sec** (secret primary key) -> Información sobre par de claves privadas maestro.
+    - **uid** (unique identifier) -> Información sobre la identidad del usuario en concreto (user-ID)
+    - **ssb** (secret sub-key) -> Información sobre par de claves privadas secundario.
+
+En la criptografía asimétrica siempre trabajamos con pares de claves: una clave pública para encriptar/comprobar firmas y una clave privada (secreta) para desencriptar/firmar, respectivamente.
+
+Cuando generamos un par de claves OpenPGP con GnuPG, por defecto se genera un par de claves primario (también conocido como master-key) y un par de claves secundario. El par de claves primario contiene uno o más user-IDs (nombre, apellidos, correo electrónico) y se usa para para firmar/comprobar firmas, siendo así una prueba de identidad.
+
+Por ello, debe guardarse con la clave privada de nuestro par de claves maestro. Por otro lado, el par de claves secundario se encuentra firmado por dicho par de claves primario, lo que confirma que pertenece a dicho user-ID y se usa para encriptar/desencriptar.
