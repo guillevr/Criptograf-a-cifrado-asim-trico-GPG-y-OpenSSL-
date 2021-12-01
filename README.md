@@ -79,13 +79,22 @@ Para listar las claves **públicas** ejecutaremos el comando **gpg --list-key**.
 
 Para listar las claves **privadas** ejecutaremos el comando **gpg --list-secret-key**.
 
-> guillevr@emisor:~$ gpg --list-secret-key
-> /home/guillevr/.gnupg/pubring.kbx
-> ---------------------------------
-> sec   rsa3072 2021-11-30 [SC] [caduca: 2023-11-30]
->       DC435E571ECA4461419C43BA0CC8CFD955118B0D
-> uid        [  absoluta ] Emisor Garcia Moreno <emisor@gmail.com>
-> ssb   rsa3072 2021-11-30 [E] [caduca: 2023-11-30]
+guillevr@emisor:~$ gpg --list-secret-key
+
+/home/guillevr/.gnupg/pubring.kbx
+
+---------------------------------
+
+sec   rsa3072 2021-11-30 [SC] [caduca: 2023-11-30]
+
+      DC435E571ECA4461419C43BA0CC8CFD955118B0D
+
+uid        [  absoluta ] Emisor Garcia Moreno <emisor@gmail.com>
+
+ssb   rsa3072 2021-11-30 [E] [caduca: 2023-11-30]
+
+
+
 
 
 
