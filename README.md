@@ -59,9 +59,10 @@ A continuación nos pedirá una contraseña de paso para proteger nuestra clave 
 
 Nuestro par de claves se ha generado y añadido con confianza absoluta a nuestro keyring **pubring.kbx** (se encuentra almacenado en nuestro directorio personal, dentro de un directorio llamado .gnupg/). Además, ha generado de forma automática un certificado de revocación dentro de **.gnupg/openpgp-revocs.d/** por si nuestra clave privada llegase a malas manos o simplemente quisiésemos dejar de utilizar dicho par de claves, de manera que se notificará a otros usuarios que la clave pública no debe ser usada nunca más para cifrar.
 
-### Listar las claves **públicas** que tenemos en nuestro almacen de claves en el equipo emisor.
+### Listar las claves **públicas** que tenemos en nuestro almacen de claves del equipo emisor.
 
 Para listar las claves **públicas** ejecutaremos el comando **gpg --list-key**.
+asdas
 
 > guillevr@emisor:~$ gpg --list-key
 > gpg: comprobando base de datos de confianza
@@ -75,9 +76,10 @@ Para listar las claves **públicas** ejecutaremos el comando **gpg --list-key**.
 > uid        [  absoluta ] Emisor Garcia Moreno <emisor@gmail.com>
 > sub   rsa3072 2021-11-30 [E] [caduca: 2023-11-30]
 
-### Listar las claves **privadas** que tenemos en nuestro almacen de claves en el equipo emisor.
+### Listar las claves **privadas** que tenemos en nuestro almacen de claves del equipo emisor.
 
 Para listar las claves **privadas** ejecutaremos el comando **gpg --list-secret-key**.
+Pureba
 
 > guillevr@emisor:~$ gpg --list-secret-key
 > /home/guillevr/.gnupg/pubring.kbx
@@ -100,10 +102,10 @@ A continuación nos pedirá una contraseña de paso para proteger nuestra clave 
 # Añadir IMAGEN FRASE DE PASO
 
 
-### Listar las claves **públicas** que tenemos en nuestro almacen de claves en el equipo receptor.
+### Listar las claves **públicas** que tenemos en nuestro almacen de claves del equipo receptor.
 Para listar las claves **públicas** ejecutaremos el comando **gpg --list-key**.
 
-### Listar las claves **privadas** que tenemos en nuestro almacen de claves en el equipo receptor.
+### Listar las claves **privadas** que tenemos en nuestro almacen de claves del equipo receptor.
 Para listar las claves **privadas** ejecutaremos el comando **gpg --list-secret-key**.
 
 **-----------------------------------------------------------------------------**
