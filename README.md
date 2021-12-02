@@ -114,15 +114,15 @@ A continuación nos pedirá una contraseña de paso para proteger nuestra clave 
 
 # Añadir IMAGEN FRASE DE PASO
 
-gpg: clave A5527020648689DB marcada como de confianza absoluta
-gpg: creado el directorio '/home/guillevr/.gnupg/openpgp-revocs.d'
-gpg: certificado de revocación guardado como '/home/guillevr/.gnupg/openpgp-revocs.d/05C7907B5CA1BF28CB3A9F27A5527020648689DB.rev'
-claves pública y secreta creadas y firmadas.
-
-pub   rsa3072 2021-12-02 [SC] [caduca: 2023-12-02]
-      05C7907B5CA1BF28CB3A9F27A5527020648689DB
-uid                      Receptor Rodriguez Jurado <receptor@gmail.com>
-sub   rsa3072 2021-12-02 [E] [caduca: 2023-12-02]
+>gpg: clave A5527020648689DB marcada como de confianza absoluta
+>gpg: creado el directorio '/home/guillevr/.gnupg/openpgp-revocs.d'
+>gpg: certificado de revocación guardado como '/home/guillevr/.gnupg/openpgp->revocs.d/05C7907B5CA1BF28CB3A9F27A5527020648689DB.rev'
+>claves pública y secreta creadas y firmadas.
+>
+> pub   rsa3072 2021-12-02 [SC] [caduca: 2023-12-02]
+>       05C7907B5CA1BF28CB3A9F27A5527020648689DB
+> uid                      Receptor Rodriguez Jurado <receptor@gmail.com>
+> sub   rsa3072 2021-12-02 [E] [caduca: 2023-12-02]
 
 ### Listar las claves **públicas** que tenemos en nuestro almacen de claves del equipo receptor.
 Para listar las claves **públicas** ejecutaremos el comando **gpg --list-key**.
@@ -145,7 +145,7 @@ Para listar las claves **privadas** ejecutaremos el comando **gpg --list-secret-
 
 > guillevr@receptor:~$ gpg --list-secret-key
 > /home/guillevr/.gnupg/pubring.kbx
-> 
+>
 > sec   rsa3072 2021-12-02 [SC] [caduca: 2023-12-02]
 >       05C7907B5CA1BF28CB3A9F27A5527020648689DB
 > uid        [  absoluta ] Receptor Rodriguez Jurado <receptor@gmail.com>
