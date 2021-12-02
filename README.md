@@ -61,7 +61,13 @@ Nuestro par de claves se ha generado y añadido con confianza absoluta a nuestro
 
 ### Listar las claves **públicas** que tenemos en nuestro almacen de claves del equipo emisor.
 
-Prueba
+Para listar las claves **públicas** ejecutaremos el comando gpg --list-key.
+
+> prueba
+> apsdassdd
+>sdfsdfsdf
+>sdf
+>sdf
 
 
 ### Listar las claves **privadas** que tenemos en nuestro almacen de claves del equipo emisor.
