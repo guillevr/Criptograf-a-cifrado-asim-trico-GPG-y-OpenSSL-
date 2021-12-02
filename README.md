@@ -74,6 +74,7 @@ Para listar las claves **públicas** ejecutaremos el comando gpg --list-key.
 
 Para listar las claves **privadas** ejecutaremos el comando gpg --list-secret-key.
 
+> asdasdasd
 > guillevr@emisor:~$ gpg --list-secret-key   
 > /home/guillevr/.gnupg/pubring.kbx
 > ---------------------------------
