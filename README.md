@@ -86,15 +86,15 @@ Para listar las claves **privadas** ejecutaremos el comando **gpg --list-secret-
 ### Generar clave pública en el equipo receptor
 
 > guillevr@receptor:~$ gpg --gen-key
-> 
+>
 > gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.
 > This is free software: you are free to change and redistribute it.
 > There is NO WARRANTY, to the extent permitted by law.
-> 
+>
 > Nota: Usa "gpg --full-generate-key" para el diálogo completo de generación de clave.
-> 
+>
 > GnuPG debe construir un ID de usuario para identificar su clave.
-> 
+>
 > Nombre y apellidos: Receptor Rodriguez Jurado
 > Dirección de correo electrónico: receptor@gmail.com
 > Ha seleccionado este ID de usuario:
@@ -176,8 +176,8 @@ Exactamente repetiremos el mismo paso pero en el equipo Receptor.
 Lo siguiente que haremos será intercambiar las claves:
 
 Enviamos la fichero con scp por ssh desde el Emisor al Receptor
-> guillevr@emisor:~$ scp pk_emisorgm.key guillevr@10.0.2.8:~
-> guillevr@10.0.2.8's password:
+> guillevr@emisor:~$ scp pk_emisorgm.key guillevr@10.0.2.8:~   
+> guillevr@10.0.2.8's password:   
 > pk_emisorgm.key                                                  100% 2464     2.1MB/s   00:00    
 > guillevr@emisor:~$
 
@@ -199,8 +199,8 @@ Comprobamos en el equipo Receptor que tenemos el fichero correctamente.
 
 Enviamos la fichero con scp por ssh desde el Receptor al Emisor
 
-> guillevr@receptor:~$ scp pk_receptorrj.key guillevr@10.0.2.7:~
-> guillevr@10.0.2.7's password:
+> guillevr@receptor:~$ scp pk_receptorrj.key guillevr@10.0.2.7:~   
+> guillevr@10.0.2.7's password:   
 > pk_receptorrj.key                                   100% 2472   866.6KB/s   00:00
 
 Comprobamos en el equipo Emisor que tenemos el fichero correctamente.
