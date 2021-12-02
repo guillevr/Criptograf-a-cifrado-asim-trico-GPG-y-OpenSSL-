@@ -63,11 +63,23 @@ Nuestro par de claves se ha generado y añadido con confianza absoluta a nuestro
 
 Para listar las claves **públicas** ejecutaremos el comando gpg --list-key.
 
-> prueba
-> apsdassdd
->sdfsdfsdf
->sdf
->sdf
+> guillevr@emisor:~$ gpg --list-key
+> 
+> /home/guillevr/.gnupg/pubring.kbx
+> 
+> ---------------------------------
+> 
+> pub   rsa3072 2021-11-30 [SC] [caduca: 2023-11-30]
+> 
+>       DC435E571ECA4461419C43BA0CC8CFD955118B0D
+> 
+> uid        [  absoluta ] Emisor Garcia Moreno <emisor@gmail.com>
+> 
+> sub   rsa3072 2021-11-30 [E] [caduca: 2023-11-30]
+
+
+
+
 
 
 ### Listar las claves **privadas** que tenemos en nuestro almacen de claves del equipo emisor.
