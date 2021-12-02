@@ -63,6 +63,7 @@ Nuestro par de claves se ha generado y añadido con confianza absoluta a nuestro
 
 Para listar las claves **públicas** ejecutaremos el comando **gpg --list-key**.
 
+> IRAARA
 > Purbeasdasfwrgwef
 > guillevr@emisor:~$ gpg --list-key
 > gpg: comprobando base de datos de confianza
