@@ -63,7 +63,7 @@ Nuestro par de claves se ha generado y añadido con confianza absoluta a nuestro
 
 Para listar las claves **públicas** ejecutaremos el comando gpg --list-key.
 
-> guillevr@emisor:~$ gpg --list-key
+> guillevr@emisor:~$ gpg --list-key   
 > /home/guillevr/.gnupg/pubring.kbx
 >
 > pub   rsa3072 2021-11-30 [SC] [caduca: 2023-11-30]
