@@ -72,9 +72,7 @@ Para listar las claves **públicas** ejecutaremos el comando gpg --list-key.
 
 ### Listar las claves **privadas** que tenemos en nuestro almacen de claves del equipo emisor.
 
-Para listar las claves **privadas** ejecutaremos el comando gpg --list-secret-key.
-
-> asdasdasd
+Para listar las claves **privadas** ejecutaremos el comando
 > guillevr@emisor:~$ gpg --list-secret-key   
 > /home/guillevr/.gnupg/pubring.kbx
 > ---------------------------------
