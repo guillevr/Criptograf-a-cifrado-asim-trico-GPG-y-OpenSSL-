@@ -63,27 +63,16 @@ Nuestro par de claves se ha generado y añadido con confianza absoluta a nuestro
 
 Para listar las claves **públicas** ejecutaremos el comando gpg --list-key.
 > guillevr@emisor:~$ gpg --list-key
-> 
 > gpg: comprobando base de datos de confianza
-> 
 > gpg: marginals needed: 3  completes needed: 1  trust model: pgp
-> 
 > gpg: nivel: 0  validez:   1  firmada:   0  confianza: 0-, 0q, 0n, 0m, 0f, 1u
-> 
 > gpg: siguiente comprobación de base de datos de confianza el: 2023-11-30
-> 
 > /home/guillevr/.gnupg/pubring.kbx
-> 
 > ---------------------------------
-> 
 > pub   rsa3072 2021-11-30 [SC] [caduca: 2023-11-30]
-> 
 >       DC435E571ECA4461419C43BA0CC8CFD955118B0D
-> 
 > uid        [  absoluta ] Emisor Garcia Moreno <emisor@gmail.com>
-> 
 > sub   rsa3072 2021-11-30 [E] [caduca: 2023-11-30]
-> 
 
 
 
