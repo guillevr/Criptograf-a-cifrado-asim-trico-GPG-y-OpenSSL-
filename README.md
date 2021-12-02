@@ -162,3 +162,59 @@ En la criptografía asimétrica siempre trabajamos con pares de claves: una clav
 Cuando generamos un par de claves OpenPGP con GnuPG, por defecto se genera un par de claves primario (también conocido como master-key) y un par de claves secundario. El par de claves primario contiene uno o más user-IDs (nombre, apellidos, correo electrónico) y se usa para para firmar/comprobar firmas, siendo así una prueba de identidad.
 
 Por ello, debe guardarse con la clave privada de nuestro par de claves maestro. Por otro lado, el par de claves secundario se encuentra firmado por dicho par de claves primario, lo que confirma que pertenece a dicho user-ID y se usa para encriptar/desencriptar.
+
+### Exportamos la clave pública de Emisor y Receptor y la intercambiamos.
+
+Primero, nos vamos al equipo Emisor y exportamos la clave publica con la siguiente orden: **gpg --export -a "nombre_apellidos_usuario" > nombre_fichero.key**.
+
+> guillevr@emisor:~$ gpg --export -a "Emisor Garcia Moreno" > pk_emisorgm.key
+
+Exactamente repetiremos el mismo paso pero en el equipo Receptor.
+
+> guillevr@receptor:~$ gpg --export -a "Receptor Rodriguez Jurado" > pk_receptorrj.key
+
+Lo siguiente que haremos será intercambiar las claves:
+
+Enviamos la fichero con scp por ssh desde el Emisor al Receptor
+> guillevr@emisor:~$ scp pk_emisorgm.key guillevr@10.0.2.8:~
+> guillevr@10.0.2.8's password:
+> pk_emisorgm.key                                                  100% 2464     2.1MB/s   00:00    
+> guillevr@emisor:~$
+
+Comprobamos en el equipo Receptor que tenemos el fichero correctamente.
+
+> guillevr@receptor:~$ ls -l
+> total 44
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Descargas
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Documentos
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Escritorio
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Imágenes
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Música
+> -rw-rw-r-- 1 guillevr guillevr 2464 dic  3 00:26 **pk_emisorgm.key**
+> -rw-rw-r-- 1 guillevr guillevr 2472 dic  3 00:24 pk_receptorrj.key
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Plantillas
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Público
+> drwx------ 3 guillevr guillevr 4096 sep 30 21:52 snap
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Vídeos
+
+Enviamos la fichero con scp por ssh desde el Receptor al Emisor
+
+> guillevr@receptor:~$ scp pk_receptorrj.key guillevr@10.0.2.7:~
+> guillevr@10.0.2.7's password:
+> pk_receptorrj.key                                   100% 2472   866.6KB/s   00:00
+
+Comprobamos en el equipo Emisor que tenemos el fichero correctamente.
+
+> guillevr@emisor:~$ ls -l
+> total 44
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Descargas
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Documentos
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Escritorio
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Imágenes
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Música
+> -rw-rw-r-- 1 guillevr guillevr 2464 dic  3 00:19 pk_emisorgm.key
+> -rw-rw-r-- 1 guillevr guillevr 2472 dic  3 00:33 **pk_receptorrj.key**
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Plantillas
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Público
+> drwx------ 3 guillevr guillevr 4096 sep 30 21:52 snap
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Vídeos
