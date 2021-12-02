@@ -85,20 +85,20 @@ Para listar las claves **privadas** ejecutaremos el comando **gpg --list-secret-
 
 ### Generar clave pública en el equipo receptor
 
-guillevr@receptor:~$ gpg --gen-key
-
-gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-
-Nota: Usa "gpg --full-generate-key" para el diálogo completo de generación de clave.
-
-GnuPG debe construir un ID de usuario para identificar su clave.
-
-Nombre y apellidos: Receptor Rodriguez Jurado
-Dirección de correo electrónico: receptor@gmail.com
-Ha seleccionado este ID de usuario:
-    "Receptor Rodriguez Jurado <receptor@gmail.com>"
+> guillevr@receptor:~$ gpg --gen-key
+> 
+> gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.
+> This is free software: you are free to change and redistribute it.
+> There is NO WARRANTY, to the extent permitted by law.
+> 
+> Nota: Usa "gpg --full-generate-key" para el diálogo completo de generación de clave.
+> 
+> GnuPG debe construir un ID de usuario para identificar su clave.
+> 
+> Nombre y apellidos: Receptor Rodriguez Jurado
+> Dirección de correo electrónico: receptor@gmail.com
+> Ha seleccionado este ID de usuario:
+>     "Receptor Rodriguez Jurado <receptor@gmail.com>"
 
 Si todo está correcto y no hay que modificar nada, introduciremos la letra **v.**
 
@@ -163,7 +163,7 @@ Cuando generamos un par de claves OpenPGP con GnuPG, por defecto se genera un pa
 
 Por ello, debe guardarse con la clave privada de nuestro par de claves maestro. Por otro lado, el par de claves secundario se encuentra firmado por dicho par de claves primario, lo que confirma que pertenece a dicho user-ID y se usa para encriptar/desencriptar.
 
-### Exportamos la clave pública de Emisor y Receptor y la intercambiamos.
+## Exportar la clave pública de Emisor y Receptor y realizar el intercambio
 
 Primero, nos vamos al equipo Emisor y exportamos la clave publica con la siguiente orden: **gpg --export -a "nombre_apellidos_usuario" > nombre_fichero.key**.
 
