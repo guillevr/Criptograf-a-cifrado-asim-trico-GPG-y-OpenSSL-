@@ -83,12 +83,6 @@ Para listar las claves **privadas** ejecutaremos el comando **gpg --list-secret-
 > uid        [  absoluta ] Emisor Garcia Moreno <emisor@gmail.com>
 > ssb   rsa3072 2021-11-30 [E] [caduca: 2023-11-30]
 
-
-
-**-----------------------------------------------------------------------------**
-**---------------         FALTA POR HACER                 ---------------------**
-**-----------------------------------------------------------------------------**
-
 ### Generar clave pública en el equipo receptor
 
 guillevr@receptor:~$ gpg --gen-key
