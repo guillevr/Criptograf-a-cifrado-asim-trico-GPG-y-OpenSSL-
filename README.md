@@ -183,8 +183,8 @@ Enviamos la fichero con scp por ssh desde el Emisor al Receptor
 
 Comprobamos en el equipo Receptor que tenemos el fichero correctamente.
 
-> guillevr@receptor:~$ ls -l
-> total 44
+> guillevr@receptor:~$ ls -l   
+> total 44   
 > drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Descargas   
 > drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Documentos   
 > drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Escritorio    
@@ -205,8 +205,8 @@ Enviamos la fichero con scp por ssh desde el Receptor al Emisor
 
 Comprobamos en el equipo Emisor que tenemos el fichero correctamente.
 
-> guillevr@emisor:~$ ls -l
-> total 44
+> guillevr@emisor:~$ ls -l   
+> total 44   
 > drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Descargas   
 > drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Documentos   
 > drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Escritorio   
