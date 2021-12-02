@@ -61,7 +61,7 @@ Nuestro par de claves se ha generado y añadido con confianza absoluta a nuestro
 
 ### Listar las claves **públicas** que tenemos en nuestro almacen de claves del equipo emisor.
 
-Para listar las claves **públicas** ejecutaremos el comando **gpg --list-key.**
+Para listar las claves **públicas** ejecutaremos el comando gpg --list-key.
 > guillevr@emisor:~$ gpg --list-key  
 > /home/guillevr/.gnupg/pubring.kbx
 > ---------------------------------
@@ -72,7 +72,7 @@ Para listar las claves **públicas** ejecutaremos el comando **gpg --list-key.**
 
 ### Listar las claves **privadas** que tenemos en nuestro almacen de claves del equipo emisor.
 
-Para listar las claves **privadas** ejecutaremos el comando **gpg --list-secret-key.**
+Para listar las claves **privadas** ejecutaremos el comando gpg --list-secret-key.
 
 > guillevr@emisor:~$ gpg --list-secret-key   
 > /home/guillevr/.gnupg/pubring.kbx
