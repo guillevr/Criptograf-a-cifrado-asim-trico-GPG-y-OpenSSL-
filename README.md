@@ -85,30 +85,71 @@ Para listar las claves **privadas** ejecutaremos el comando **gpg --list-secret-
 
 
 
-
-
 **-----------------------------------------------------------------------------**
 **---------------         FALTA POR HACER                 ---------------------**
 **-----------------------------------------------------------------------------**
 
 ### Generar clave pública en el equipo receptor
 
+guillevr@receptor:~$ gpg --gen-key
+
+gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Nota: Usa "gpg --full-generate-key" para el diálogo completo de generación de clave.
+
+GnuPG debe construir un ID de usuario para identificar su clave.
+
+Nombre y apellidos: Receptor Rodriguez Jurado
+Dirección de correo electrónico: receptor@gmail.com
+Ha seleccionado este ID de usuario:
+    "Receptor Rodriguez Jurado <receptor@gmail.com>"
+
 Si todo está correcto y no hay que modificar nada, introduciremos la letra **v.**
+
+> ¿Cambia (N)ombre, (D)irección o (V)ale/(S)alir? v
 
 A continuación nos pedirá una contraseña de paso para proteger nuestra clave privada.
 
 # Añadir IMAGEN FRASE DE PASO
 
+gpg: clave A5527020648689DB marcada como de confianza absoluta
+gpg: creado el directorio '/home/guillevr/.gnupg/openpgp-revocs.d'
+gpg: certificado de revocación guardado como '/home/guillevr/.gnupg/openpgp-revocs.d/05C7907B5CA1BF28CB3A9F27A5527020648689DB.rev'
+claves pública y secreta creadas y firmadas.
+
+pub   rsa3072 2021-12-02 [SC] [caduca: 2023-12-02]
+      05C7907B5CA1BF28CB3A9F27A5527020648689DB
+uid                      Receptor Rodriguez Jurado <receptor@gmail.com>
+sub   rsa3072 2021-12-02 [E] [caduca: 2023-12-02]
 
 ### Listar las claves **públicas** que tenemos en nuestro almacen de claves del equipo receptor.
 Para listar las claves **públicas** ejecutaremos el comando **gpg --list-key**.
 
+> guillevr@receptor:~$ gpg --list-key
+> gpg: comprobando base de datos de confianza
+> gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+> gpg: nivel: 0  validez:   1  firmada:   0  confianza: 0-, 0q, 0n, 0m, 0f, 1u
+> gpg: siguiente comprobación de base de datos de confianza el: 2023-12-02
+> /home/guillevr/.gnupg/pubring.kbx
+>
+> pub   rsa3072 2021-12-02 [SC] [caduca: 2023-12-02]
+>       05C7907B5CA1BF28CB3A9F27A5527020648689DB
+> uid        [  absoluta ] Receptor Rodriguez Jurado <receptor@gmail.com>
+> sub   rsa3072 2021-12-02 [E] [caduca: 2023-12-02]
+
+
 ### Listar las claves **privadas** que tenemos en nuestro almacen de claves del equipo receptor.
 Para listar las claves **privadas** ejecutaremos el comando **gpg --list-secret-key**.
 
-**-----------------------------------------------------------------------------**
-**-----------------------------------------------------------------------------**
-**-----------------------------------------------------------------------------**
+> guillevr@receptor:~$ gpg --list-secret-key
+> /home/guillevr/.gnupg/pubring.kbx
+> 
+> sec   rsa3072 2021-12-02 [SC] [caduca: 2023-12-02]
+>       05C7907B5CA1BF28CB3A9F27A5527020648689DB
+> uid        [  absoluta ] Receptor Rodriguez Jurado <receptor@gmail.com>
+> ssb   rsa3072 2021-12-02 [E] [caduca: 2023-12-02]
 
 
 ## ¿Que información vemos cuando listamos las claves públicas y privadas?
