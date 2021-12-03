@@ -221,14 +221,16 @@ Comprobamos en el equipo Emisor que tenemos el fichero correctamente.
 
 ## Importar claves publicas en los equipos
 
-Para importar las claves del usuario Receptor en el equipo del usuario Emisor, ejecutaremos el comando **gpg --import <nombre_fichero>**. Posteriormente, comprobaremos que las claves de han incluido en nuestro almacen de claves:
+Para importar las claves del usuario Receptor en el equipo del usuario Emisor, ejecutaremos el comando **gpg --import <nombre_fichero>**.
 
 > guillevr@emisor:~$ gpg --import pk_receptorrj.key    
 > gpg: clave A5527020648689DB: clave pública "Receptor Rodriguez Jurado <receptor@gmail.com>" importada     
 > gpg: Cantidad total procesada: 1    
 > gpg:               importadas: 1
 >
-> guillevr@emisor:~$    
+
+Posteriormente, comprobaremos que las claves de han incluido en nuestro almacen de claves:
+
 > guillevr@emisor:~$ gpg --list-keys
 > /home/guillevr/.gnupg/pubring.kbx
 >
