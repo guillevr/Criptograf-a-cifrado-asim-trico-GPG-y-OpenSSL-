@@ -296,19 +296,19 @@ Como podremos comprobar, si listamos el directorio actual, comprobaremos que se 
 
 > guillevr@emisor:~$ ls -l     
 > total 2080     
-> -rw-rw-r-- 1 guillevr guillevr 1141090 dic  3 17:51 2022_YZF1000R1SPL_es_ES.pdf
-> -rw-rw-r-- 1 guillevr guillevr  938092 dic  3 18:29 **2022_YZF1000R1SPL_es_ES.pdf.gpg**
-> drwxr-xr-x 2 guillevr guillevr    4096 dic  3 17:52 Descargas
-> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Documentos
-> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Escritorio
-> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Imágenes
-> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Música
-> -rw-rw-r-- 1 guillevr guillevr    2464 dic  3 00:19 pk_emisorgm.key
-> -rw-rw-r-- 1 guillevr guillevr    2472 dic  3 00:33 pk_receptorrj.key
-> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Plantillas
-> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Público
-> drwx------ 3 guillevr guillevr    4096 sep 30 21:52 snap
-> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Vídeos
+> -rw-rw-r-- 1 guillevr guillevr 1141090 dic  3 17:51 2022_YZF1000R1SPL_es_ES.pdf     
+> -rw-rw-r-- 1 guillevr guillevr  938092 dic  3 18:29 **2022_YZF1000R1SPL_es_ES.pdf.gpg**     
+> drwxr-xr-x 2 guillevr guillevr    4096 dic  3 17:52 Descargas     
+> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Documentos     
+> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Escritorio     
+> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Imágenes     
+> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Música     
+> -rw-rw-r-- 1 guillevr guillevr    2464 dic  3 00:19 pk_emisorgm.key     
+> -rw-rw-r-- 1 guillevr guillevr    2472 dic  3 00:33 pk_receptorrj.key     
+> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Plantillas     
+> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Público     
+> drwx------ 3 guillevr guillevr    4096 sep 30 21:52 snap     
+> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Vídeos     
 
 
 
