@@ -223,23 +223,23 @@ Comprobamos en el equipo Emisor que tenemos el fichero correctamente.
 
 Para importar las claves del usuario Receptor en el equipo del usuario Emisor, ejecutaremos el comando **gpg --import <nombre_fichero>**. Posteriormente, comprobaremos que las claves de han incluido en nuestro almacen de claves:
 
-> guillevr@emisor:~$ gpg --import pk_receptorrj.key
-> gpg: clave A5527020648689DB: clave pública "Receptor Rodriguez Jurado <receptor@gmail.com>" importada
-> gpg: Cantidad total procesada: 1
+> guillevr@emisor:~$ gpg --import pk_receptorrj.key    
+> gpg: clave A5527020648689DB: clave pública "Receptor Rodriguez Jurado <receptor@gmail.com>" importada     
+> gpg: Cantidad total procesada: 1    
 > gpg:               importadas: 1
 >
-> guillevr@emisor:~$ 
+> guillevr@emisor:~$    
 > guillevr@emisor:~$ gpg --list-keys
 > /home/guillevr/.gnupg/pubring.kbx
 >
 > pub   rsa3072 2021-11-30 [SC] [caduca: 2023-11-30]
->       DC435E571ECA4461419C43BA0CC8CFD955118B0D
-> uid        [  absoluta ] Emisor Garcia Moreno <emisor@gmail.com>
+>       DC435E571ECA4461419C43BA0CC8CFD955118B0D     
+> uid        [  absoluta ] Emisor Garcia Moreno <emisor@gmail.com>     
 > sub   rsa3072 2021-11-30 [E] [caduca: 2023-11-30]
 >
 > pub   rsa3072 2021-12-02 [SC] [caduca: 2023-12-02]
->       05C7907B5CA1BF28CB3A9F27A5527020648689DB
-> uid        [desconocida] Receptor Rodriguez Jurado <receptor@gmail.com>
+>       05C7907B5CA1BF28CB3A9F27A5527020648689DB      
+> uid        [desconocida] Receptor Rodriguez Jurado <receptor@gmail.com>     
 > sub   rsa3072 2021-12-02 [E] [caduca: 2023-12-02]
 
 
