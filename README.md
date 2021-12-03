@@ -218,3 +218,6 @@ Comprobamos en el equipo Emisor que tenemos el fichero correctamente.
 > drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Público   
 > drwx------ 3 guillevr guillevr 4096 sep 30 21:52 snap   
 > drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Vídeos   
+
+
+`Prueba de incertar codicogajansd`
