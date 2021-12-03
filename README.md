@@ -268,16 +268,26 @@ Posteriormente, comprobaremos que las claves de han incluido en nuestro almacen 
 > **sub   rsa3072 2021-11-30 [E] [caduca: 2023-11-30]**    
 
 
-
-
-
-
-
-
 ## Cifrar documentos
 
-Lo siguiente que vamos a hacer es cifrar documentos y descifrarlos.
-
-Para el ejemplo, me he descargado un fichero .pdf de internet, el cual, antes de cifrarlo, puedo ver el contenido perfectamente:
+Lo siguiente que vamos a hacer es cifrar documentos. Para ello, me he descargado un fichero .pdf de internet, el cual, antes de cifrarlo, puedo ver el contenido perfectamente:
 
 # CAPTURA PANTALLA SOBRE EL FICHERO PDF ABIERTO SIN PROBLEMAS
+
+La sentencia del comando para cifrar es **gpg -e -u "emisor" -r "receptor" <fichero>**:
+
+Donde:
+- **-e (--encrypt)** -> cifra datos
+- **-r (--recipient USER-ID)** -> cifra para ID-USUARIO (usuario receptor)
+- **-u (--local-user USER-ID)** -> usa este identificador para firmar o descifrar (usuario emisor)
+
+> guillevr@emisor:~$ gpg -e -u "Emisor Garcia Moreno" -r "Receptor Rodriguez Jurado" 2022_YZF1000R1SPL_es_ES.pdf      
+> gpg: 091934B431AE0402: No hay seguridad de que esta clave pertenezca realmente al usuario que se nombra     
+>
+> sub  rsa3072/091934B431AE0402 2021-12-02 Receptor Rodriguez Jurado <receptor@gmail.com>     
+>  Huella clave primaria: 05C7 907B 5CA1 BF28 CB3A  9F27 A552 7020 6486 89DB    
+>       Huella de subclave: A057 0441 7DBF 5C34 D56D  7C9C 0919 34B4 31AE 0402    
+>
+> No es seguro que la clave pertenezca a la persona que se nombra en el identificador de usuario. Si *realmente* sabe lo que > está haciendo, puede contestar sí a la siguiente pregunta.    
+>
+> ¿Usar esta clave de todas formas? (s/N) **s**    
