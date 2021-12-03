@@ -199,7 +199,7 @@ Comprobamos en el equipo Receptor que tenemos el fichero correctamente.
 
 Enviamos la fichero con scp por ssh desde el Receptor al Emisor
 
-> guillevr@receptor:~$ scp pk_receptorrj.key guillevr@10.0.2.7:~   
+> guillevr@receptor:~$ scp pk_receptorrj.key guillevr@10.0.2.7:  
 > guillevr@10.0.2.7's password:   
 > pk_receptorrj.key                                   100% 2472   866.6KB/s   00:00
 
