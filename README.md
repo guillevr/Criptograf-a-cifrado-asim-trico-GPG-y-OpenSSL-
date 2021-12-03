@@ -231,7 +231,7 @@ Para importar las claves del usuario Receptor en el equipo del usuario Emisor, e
 
 Posteriormente, comprobaremos que las claves de han incluido en nuestro almacen de claves:
 
-> guillevr@emisor:~$ gpg --list-keys
+> guillevr@emisor:~$ gpg --list-keys      
 > /home/guillevr/.gnupg/pubring.kbx    
 >
 > pub   rsa3072 2021-11-30 [SC] [caduca: 2023-11-30]
@@ -244,7 +244,7 @@ Posteriormente, comprobaremos que las claves de han incluido en nuestro almacen 
 > **uid        [desconocida] Receptor Rodriguez Jurado <receptor@gmail.com>**     
 > **sub   rsa3072 2021-12-02 [E] [caduca: 2023-12-02]**
 
-Para importar las claves del usuario Emisor en el equipo del usuario Receptor, ejecutaremos el comando **gpg --import <nombre_fichero>** al igual que en el anteriormente.
+Ahora importaremos las claves del usuario Emisor en el equipo del usuario Receptor, ejecutaremos el comando **gpg --import <nombre_fichero>** al igual que en el anteriormente.
 
 > guillevr@receptor:~$ gpg --import pk_emisorgm.key     
 > gpg: clave 0CC8CFD955118B0D: clave pública "Emisor Garcia Moreno <emisor@gmail.com>" > importada    
