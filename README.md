@@ -292,7 +292,7 @@ Donde:
 >
 > ¿Usar esta clave de todas formas? (s/N) **s**    
 
-Como podremos comprobar, si listamos el directorio actual, comprobaremos que se ha creado un fichero con extension **.gpg**, el cual no podremos abrir:
+Como podremos comprobar, si listamos el directorio actual, comprobaremos que se ha creado un fichero con extension **.gpg**, el cual podemos abrir pero no podemos ver su contenido, ya que está cifrado:
 
 > guillevr@emisor:~$ ls -l     
 > total 2080     
@@ -310,7 +310,5 @@ Como podremos comprobar, si listamos el directorio actual, comprobaremos que se 
 > drwx------ 3 guillevr guillevr    4096 sep 30 21:52 snap     
 > drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Vídeos     
 
-
-
-
 # CAPTURA PANTALLA DEL FICHERO NORMAL Y EL FICHERO CIFRADO
+# CAPTURA PANTALLA DEL FICHERO ABIERTO DEL CUAL NO SE PUEDE VER EL CONTENIDO.
