@@ -205,16 +205,16 @@ Enviamos la fichero con scp por ssh desde el Receptor al Emisor
 
 Comprobamos en el equipo Emisor que tenemos el fichero correctamente.
 
-`guillevr@emisor:~$ ls -l   
- total 44   
- drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Descargas   
- drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Documentos   
- drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Escritorio   
- drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Imágenes   
- drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Música   
- -rw-rw-r-- 1 guillevr guillevr 2464 dic  3 00:19 pk_emisorgm.key   
- -rw-rw-r-- 1 guillevr guillevr 2472 dic  3 00:33 **pk_receptorrj.key**   
- drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Plantillas   
- drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Público   
- drwx------ 3 guillevr guillevr 4096 sep 30 21:52 snap   
- drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Vídeos`
+> guillevr@emisor:~$ ls -l   
+> total 44   
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Descargas   
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Documentos   
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Escritorio   
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Imágenes   
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Música   
+> -rw-rw-r-- 1 guillevr guillevr 2464 dic  3 00:19 pk_emisorgm.key   
+> -rw-rw-r-- 1 guillevr guillevr 2472 dic  3 00:33 **pk_receptorrj.key**   
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Plantillas   
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Público   
+> drwx------ 3 guillevr guillevr 4096 sep 30 21:52 snap   
+> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Vídeos
