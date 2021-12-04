@@ -317,3 +317,51 @@ Una vez desencriptado, ya podríamos ver el contenido si fuera texto plano, pero
 Ahora, comprobamos que podemos ver el contenido del fichero correctamente. Nos vamos a la carpeta donde esté el fichero y lo abrimos para ver el contenido:
 
 # Añadir captura donde se encuentra el fichero desencriptado y donde se puede comprobar que abre perfectamente para ver su contenido.
+
+
+## Eliminar claves publicas y privadas
+
+### Eliminar clave privada y publica del equipo Emisor
+
+> guillevr@emisor:~$ gpg --delete-secret-key "Emisor Garcia Moreno"     
+> gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.     
+> This is free software: you are free to change and redistribute it.     
+> There is NO WARRANTY, to the extent permitted by law.     
+>
+> sec  rsa3072/0CC8CFD955118B0D 2021-11-30 Emisor Garcia Moreno <emisor@gmail.com>     
+>
+> ¿Eliminar esta clave del anillo? (s/N) s     
+> ¡Es una clave secreta! ¿Eliminar realmente? (s/N) s     
+> guillevr@emisor:~$      
+> guillevr@emisor:~$ gpg --delete-key "Receptor Rodriguez Jurado"     
+> gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.     
+> This is free software: you are free to change and redistribute it.     
+> There is NO WARRANTY, to the extent permitted by law.     
+>
+>
+> pub  rsa3072/A5527020648689DB 2021-12-02 Receptor Rodriguez Jurado <receptor@gmail.com>     
+>
+> ¿Eliminar esta clave del anillo? (s/N) s     
+
+
+### Eliminar clave privada y publica del equipo Receptor
+
+> guillevr@receptor:~$ gpg --delete-secret-key "Receptor Rodriguez Jurado"    
+> gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.    
+> This is free software: you are free to change and redistribute it.    
+> There is NO WARRANTY, to the extent permitted by law.    
+>
+> sec  rsa3072/A5527020648689DB 2021-12-02 Receptor Rodriguez Jurado <receptor@gmail.com>    
+>
+> ¿Eliminar esta clave del anillo? (s/N) s    
+> ¡Es una clave secreta! ¿Eliminar realmente? (s/N) s    
+> guillevr@receptor:~$     
+> guillevr@receptor:~$ gpg --delete-key "Emisor Garcia Moreno"    
+> gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.    
+> This is free software: you are free to change and redistribute it.    
+> There is NO WARRANTY, to the extent permitted by law.    
+>
+>
+> pub  rsa3072/0CC8CFD955118B0D 2021-11-30 Emisor Garcia Moreno <emisor@gmail.com>    
+>
+> ¿Eliminar esta clave del anillo? (s/N) s    
