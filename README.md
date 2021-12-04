@@ -288,7 +288,7 @@ Como podremos comprobar, si listamos el directorio actual, comprobaremos que se 
 Enviamos el archivo cifrado del Emisor al equipo Receptor:
 
 > guillevr@emisor:~$ scp 2022_YZF1000R1SPL_es_ES.pdf.gpg  guillevr@10.0.2.8:~     
-> guillevr@10.0.2.8's password:
+> guillevr@10.0.2.8's password:     
 > 2022_YZF1000R1SPL_es_ES.pdf.gpg                                                   100%  916KB  32.5MB/s   00:00
 
 Comprobamos que le haya llegado al Receptor el correo perfectamente:
