@@ -321,6 +321,8 @@ Ahora, comprobamos que podemos ver el contenido del fichero correctamente. Nos v
 
 ## Eliminar claves publicas y privadas
 
+Para eliminar las claves privadas del equipo ejecutaremos la sentencia **gpg --delete-secret-key "<Nombre y apellidos del usuario local>"** y para eliminar la clave publica, ejecutaremos la sentencia **gpg --delete-key "<Nombre y apellidos del usuario>"**
+
 ### Eliminar clave privada y publica del equipo Emisor
 
 > guillevr@emisor:~$ gpg --delete-secret-key "Emisor Garcia Moreno"     
