@@ -183,19 +183,10 @@ Enviamos la fichero con scp por ssh desde el Emisor al Receptor
 
 Comprobamos en el equipo Receptor que tenemos el fichero correctamente.
 
-> guillevr@receptor:~$ ls -l   
-> total 44   
-> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Descargas   
-> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Documentos   
-> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Escritorio    
-> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Imágenes    
-> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Música    
+> guillevr@receptor:~$ ls -l | grep "pk"   
 > -rw-rw-r-- 1 guillevr guillevr 2464 dic  3 00:26 **pk_emisorgm.key**    
 > -rw-rw-r-- 1 guillevr guillevr 2472 dic  3 00:24 pk_receptorrj.key    
-> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Plantillas    
-> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Público    
-> drwx------ 3 guillevr guillevr 4096 sep 30 21:52 snap    
-> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Vídeos    
+
 
 Enviamos la fichero con scp por ssh desde el Receptor al Emisor
 
@@ -205,19 +196,9 @@ Enviamos la fichero con scp por ssh desde el Receptor al Emisor
 
 Comprobamos en el equipo Emisor que tenemos el fichero correctamente.
 
-> guillevr@emisor:~$ ls -l   
-> total 44   
-> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Descargas   
-> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Documentos   
-> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Escritorio   
-> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Imágenes   
-> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Música   
+> guillevr@emisor:~$ ls -l | grep "pk"     
 > -rw-rw-r-- 1 guillevr guillevr 2464 dic  3 00:19 pk_emisorgm.key   
 > -rw-rw-r-- 1 guillevr guillevr 2472 dic  3 00:33 **pk_receptorrj.key**   
-> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Plantillas   
-> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Público   
-> drwx------ 3 guillevr guillevr 4096 sep 30 21:52 snap   
-> drwxr-xr-x 2 guillevr guillevr 4096 sep 27 00:45 Vídeos
 
 ## Importar claves publicas en los equipos
 
@@ -294,21 +275,45 @@ Donde:
 
 Como podremos comprobar, si listamos el directorio actual, comprobaremos que se ha creado un fichero con extension **.gpg**, el cual podemos abrir pero no podemos ver su contenido, ya que está cifrado:
 
-> guillevr@emisor:~$ ls -l     
-> total 2080     
+> guillevr@emisor:~$ ls -l | grep "2022"    
 > -rw-rw-r-- 1 guillevr guillevr 1141090 dic  3 17:51 2022_YZF1000R1SPL_es_ES.pdf     
 > -rw-rw-r-- 1 guillevr guillevr  938092 dic  3 18:29 **2022_YZF1000R1SPL_es_ES.pdf.gpg**     
-> drwxr-xr-x 2 guillevr guillevr    4096 dic  3 17:52 Descargas     
-> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Documentos     
-> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Escritorio     
-> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Imágenes     
-> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Música     
-> -rw-rw-r-- 1 guillevr guillevr    2464 dic  3 00:19 pk_emisorgm.key     
-> -rw-rw-r-- 1 guillevr guillevr    2472 dic  3 00:33 pk_receptorrj.key     
-> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Plantillas     
-> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Público     
-> drwx------ 3 guillevr guillevr    4096 sep 30 21:52 snap     
-> drwxr-xr-x 2 guillevr guillevr    4096 sep 27 00:45 Vídeos     
+
 
 # CAPTURA PANTALLA DEL FICHERO NORMAL Y EL FICHERO CIFRADO
 # CAPTURA PANTALLA DEL FICHERO ABIERTO DEL CUAL NO SE PUEDE VER EL CONTENIDO.
+
+## Descifrar documentos
+
+Enviamos el archivo cifrado del Emisor al equipo Receptor:
+
+> guillevr@emisor:~$ scp 2022_YZF1000R1SPL_es_ES.pdf.gpg  guillevr@10.0.2.8:~     
+> guillevr@10.0.2.8's password:
+> 2022_YZF1000R1SPL_es_ES.pdf.gpg                                                   100%  916KB  32.5MB/s   00:00
+
+Comprobamos que le haya llegado al Receptor el correo perfectamente:
+
+> guillevr@receptor:~$ ls -l | grep "2022"    
+> -rw-rw-r-- 1 guillevr guillevr 938093 dic  4 21:16 2022_YZF1000R1SPL_es_ES.pdf.gpg
+
+Nos vamos al equipo Receptor e intentamos abrir el fichero sin descifrarlo:
+
+# CAPTURA PANTALLA DEL FICHERO ABIERTO DEL CUAL NO SE PUEDE VER EL CONTENIDO.
+
+Desde el equipo Receptor, descifraremos el fichero con el sentencia **gpg -d <nombre_fichero>** donde la opcion **-d** significa "descifrar / desencriptar":
+
+> guillevr@receptor:~$ gpg -d 2022_YZF1000R1SPL_es_ES.pdf.gpg
+
+Tras ejecutarlo, nos pedirá la contraseña que introdujimos anteriormente al crear la clave privada, la cual nos va a hacer falta para descifrar el fichero.
+
+# AÑADIR CAPTURA DONDE PIDE LA CONTRASEÑA PARA Descifrar
+
+Una vez desencriptado, ya podríamos ver el contenido si fuera texto plano, pero en mi caso, al ser un fichero pdf, debemos volver a ejecutar la sentencia anterior pero redirigiendo la salida a un fichero con extension **.pdf**.
+
+> guillevr@receptor:~$ gpg -d 2022_YZF1000R1SPL_es_ES.pdf.gpg > fichero.pdf     
+> gpg: cifrado con clave de 3072 bits RSA, ID 091934B431AE0402, creada el 2021-12-02     
+>       "Receptor Rodriguez Jurado <receptor@gmail.com>"
+
+Ahora, comprobamos que podemos ver el contenido del fichero correctamente. Nos vamos a la carpeta donde esté el fichero y lo abrimos para ver el contenido:
+
+# Añadir captura donde se encuentra el fichero desencriptado y donde se puede comprobar que abre perfectamente para ver su contenido.
