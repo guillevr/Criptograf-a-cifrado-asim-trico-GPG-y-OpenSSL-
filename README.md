@@ -14,7 +14,7 @@ Estas llaves son generadas por cada usuario y son únicas. Incluso si se generan
 ## Requisitos
 Un equipo emisor que va a ser el que envie el mensaje encriptado y un equipo emisor, el cual va a recibir el mensaje y descifrarlo.
 
-En cuando a requisitos que deba de cumplir el equipo no hay.
+En cuanto a requisitos que deba de cumplir el equipo no hay.
 
 ## Generación de claves con GPG
 Lo primero que debemos de hacer es crear un par de claves (una pública y una privada) en el equipo emisor y en el equipo receptor.
