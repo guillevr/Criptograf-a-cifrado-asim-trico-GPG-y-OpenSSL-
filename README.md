@@ -27,7 +27,8 @@ Un equipo emisor que va a ser el que envie el mensaje encriptado y un equipo emi
 
 En cuanto a requisitos que deba de cumplir el equipo no hay.
 
-## Generación de claves con GPG
+## Cifrado asimétrico con GPG
+### Generación de claves con GPG
 Lo primero que debemos de hacer es crear un par de claves (una pública y una privada) en el equipo emisor y en el equipo receptor.
 
 Para ello, ejecutaremos el comando **gpg --gen-key**.
@@ -345,7 +346,17 @@ Para eliminar las claves privadas del equipo ejecutaremos la sentencia **gpg --d
 >
 > ¿Eliminar esta clave del anillo? (s/N) s     
 > ¡Es una clave secreta! ¿Eliminar realmente? (s/N) s     
-> guillevr@emisor:~$      
+> guillevr@emisor:~$
+> guillevr@emisor:~$ gpg --delete-key "Emisor Garcia Moreno"     
+> gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.     
+> This is free software: you are free to change and redistribute it.     
+> There is NO WARRANTY, to the extent permitted by law.     
+>
+>
+> pub  rsa3072/0CC8CFD955118B0D 2021-11-30 Emisor Garcia Moreno <emisor@gmail.com>     
+>
+> ¿Eliminar esta clave del anillo? (s/N) s    
+> guillevr@emisor:~$    
 > guillevr@emisor:~$ gpg --delete-key "Receptor Rodriguez Jurado"     
 > gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.     
 > This is free software: you are free to change and redistribute it.     
@@ -354,7 +365,16 @@ Para eliminar las claves privadas del equipo ejecutaremos la sentencia **gpg --d
 >
 > pub  rsa3072/A5527020648689DB 2021-12-02 Receptor Rodriguez Jurado <receptor@gmail.com>     
 >
-> ¿Eliminar esta clave del anillo? (s/N) s     
+> ¿Eliminar esta clave del anillo? (s/N) s   
+> guillevr@emisor:~$       
+> guillevr@emisor:~$ gpg --list-secret-key     
+> gpg: comprobando base de datos de confianza     
+> gpg: no se encuentran claves absolutamente fiables      
+> guillevr@emisor:~$      
+> guillevr@emisor:~$ gpg --list-key      
+> guillevr@emisor:~$  
+
+
 
 
 ### Eliminar clave privada y publica del equipo Receptor
@@ -375,6 +395,26 @@ Para eliminar las claves privadas del equipo ejecutaremos la sentencia **gpg --d
 > There is NO WARRANTY, to the extent permitted by law.    
 >
 >
+> pub  rsa3072/A5527020648689DB 2021-12-02 Receptor Rodriguez Jurado <receptor@gmail.com>        
+>
+> ¿Eliminar esta clave del anillo? (s/N) s  
+> guillevr@receptor:~$   
+> guillevr@receptor:~$ gpg --delete-key "Emisor Garcia Moreno"    
+> gpg (GnuPG) 2.2.20; Copyright (C) 2020 Free Software Foundation, Inc.    
+> This is free software: you are free to change and redistribute it.    
+> There is NO WARRANTY, to the extent permitted by law.    
+>
+>
 > pub  rsa3072/0CC8CFD955118B0D 2021-11-30 Emisor Garcia Moreno <emisor@gmail.com>    
 >
 > ¿Eliminar esta clave del anillo? (s/N) s    
+> guillevr@receptor:~$       
+> guillevr@receptor:~$ gpg --list-secret-key     
+> gpg: comprobando base de datos de confianza     
+> gpg: no se encuentran claves absolutamente fiables      
+> guillevr@receptor:~$      
+> guillevr@receptor:~$ gpg --list-key      
+> guillevr@receptor:~$  
+
+
+## Cifrado asimétrico con OpenSSL
