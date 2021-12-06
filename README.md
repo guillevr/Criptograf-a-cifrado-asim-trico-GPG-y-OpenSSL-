@@ -328,8 +328,6 @@ Una vez desencriptado, ya podríamos ver el contenido si fuera texto plano, pero
 
 Ahora, comprobamos que podemos ver el contenido del fichero correctamente. Nos vamos a la carpeta donde esté el fichero y lo abrimos para ver el contenido:
 
-# Añadir captura donde se encuentra el fichero desencriptado y donde se puede comprobar que abre perfectamente para ver su contenido.
-
 ![](fichero_descifrado.jpg)
 
 ![](Contenido_fichero_descifrado.jpg)
