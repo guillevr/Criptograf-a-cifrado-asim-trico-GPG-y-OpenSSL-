@@ -418,3 +418,20 @@ Para eliminar las claves privadas del equipo ejecutaremos la sentencia **gpg --d
 
 
 ## Cifrado asimétrico con OpenSSL
+OpenSSL es un kit de herramientas de código abierto utilizado para implementar los protocolos Secure Sockets Layer (SSL) y Transport Layer Security (TLS). El kit de herramientas es de uso gratuito bajo la licencia OpenSSL y la licencia SSleay y está disponible para Windows, OS X y Linux.
+
+El kit de herramientas OpenSSL es utilizado por muchos sistemas de código abierto, como las variantes de Linux, y la mayoría de los servidores web de Internet, como el servidor HTTP Apache. Los protocolos SSL y TLS, que implementa OpenSSL, permiten enviar información de forma segura a través de Internet cifrando los datos para que terceros no puedan acceder a la transmisión de datos.
+
+También incluye una biblioteca criptográfica con implementaciones de cifrados simétricos, funciones hash, algoritmos de clave pública y otros algoritmos criptográficos.
+
+## Generación de claves con OpenSSL
+
+La sentencia del comando para cifrar es **openssl genrsa -aes128 -out <nombre_fichero.pem> 2048**:
+
+Donde:
+- **genrsa (Generation of RSA Private Key)** -> Genera clave privada
+- **-aes128** -> Indicamos que la frase de paso que vamos a configurar utilice el algoritmo AES128.
+- **-out** -> Fichero .pen donde queremos almacenar nuestras claves (crea un fichero unico).
+- **2048** -> Indicamos el tamaño de la clave. (Lo recomentable es que sea de almenos 2048 bits).
+
+### Generar clave pública en el equipo emisor
