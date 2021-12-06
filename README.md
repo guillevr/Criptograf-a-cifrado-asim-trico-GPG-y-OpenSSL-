@@ -449,8 +449,8 @@ Debemos de escribir dos veces la frase de paso (contraseña) para nuestro par de
 
 Comprobaremos que se ha creado correctamente el fichero:
 
-> guillevr@emisor:~$ ls -l | grep "emisor.pem"
-> -rw------- 1 root     root        1766 dic  6 22:00 emisor.pem
+> guillevr@emisor:~$ ls -l | grep "emisor.pem"    
+> -rw------- 1 root     root        1766 dic  6 22:00 emisor.pem    
 
 ### Generar clave pública en el equipo receptor
 
@@ -494,8 +494,8 @@ Una vez hayamos ejecutado el comando, nos pedirá que introduzcamos la clave de 
 
 Comprobamos que se ha creado correctamente el fichero con la clave publica.
 
-> guillevr@emisor:~$ ls -l | grep "emisor_public"      
-> -rw-r--r-- 1 root     root         451 dic  6 22:17 emisor_public.pem     
+> guillevr@emisor:~$ ls -l | grep "emisor_public"          
+> -rw-r--r-- 1 root     root         451 dic  6 22:17 emisor_public.pem         
 > guillevr@emisor:~$      
 > guillevr@emisor:~$ cat emisor_public.pem      
 > -----BEGIN PUBLIC KEY-----     
