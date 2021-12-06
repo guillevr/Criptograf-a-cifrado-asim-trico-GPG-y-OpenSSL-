@@ -435,3 +435,38 @@ Donde:
 - **2048** -> Indicamos el tamaño de la clave. (Lo recomentable es que sea de almenos 2048 bits).
 
 ### Generar clave pública en el equipo emisor
+
+> guillevr@emisor:~$ sudo openssl genrsa -aes128 -out emisor.pem 2048    
+> Generating RSA private key, 2048 bit long modulus (2 primes)    
+> .....................+++++    
+> ..+++++    
+> e is 65537 (0x010001)    
+
+Debemos de escribir dos veces la frase de paso (contraseña) para nuestro par de claves.
+
+> Enter pass phrase for emisor.pem:     
+> Verifying - Enter pass phrase for emisor.pem:     
+
+Comprobaremos que se ha creado correctamente el fichero:
+
+> guillevr@emisor:~$ ls -l | grep "emisor.pem"
+> -rw------- 1 root     root        1766 dic  6 22:00 emisor.pem
+
+### Generar clave pública en el equipo receptor
+
+> guillevr@receptor:~$ sudo openssl genrsa -aes128 -out receptor.pem 2048    
+> [sudo] contraseña para guillevr:     
+> Generating RSA private key, 2048 bit long modulus (2 primes)    
+> ...............................+++++    
+> ......+++++    
+> e is 65537 (0x010001)    
+
+Debemos de escribir dos veces la frase de paso (contraseña) para nuestro par de claves.
+
+> Enter pass phrase for receptor.pem:    
+> Verifying - Enter pass phrase for receptor.pem:    
+
+Comprobaremos que se ha creado correctamente el fichero:
+
+> guillevr@receptor:~$ ls -l | grep "receptor.pem"     
+> -rw------- 1 root     root        1766 dic  6 22:06 receptor.pem    
