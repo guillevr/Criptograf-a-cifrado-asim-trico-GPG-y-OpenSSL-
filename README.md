@@ -57,7 +57,7 @@ Si todo está correcto y no hay que modificar nada, introduciremos la letra **v.
 
 A continuación nos pedirá una contraseña de paso para proteger nuestra clave privada.
 
-# Añadir IMAGEN FRASE DE PASO
+![](frase_de_paso.jpg)
 
 > gpg: clave 0CC8CFD955118B0D marcada como de confianza absoluta
 > gpg: creado el directorio '/home/guillevr/.gnupg/openpgp-revocs.d'
@@ -118,7 +118,7 @@ Si todo está correcto y no hay que modificar nada, introduciremos la letra **v.
 
 A continuación nos pedirá una contraseña de paso para proteger nuestra clave privada.
 
-# Añadir IMAGEN FRASE DE PASO
+![](frase_de_paso.jpg)
 
 >gpg: clave A5527020648689DB marcada como de confianza absoluta
 >gpg: creado el directorio '/home/guillevr/.gnupg/openpgp-revocs.d'
@@ -265,7 +265,7 @@ Posteriormente, comprobaremos que las claves de han incluido en nuestro almacen 
 
 Lo siguiente que vamos a hacer es cifrar documentos. Para ello, me he descargado un fichero .pdf de internet, el cual, antes de cifrarlo, puedo ver el contenido perfectamente:
 
-# CAPTURA PANTALLA SOBRE EL FICHERO PDF ABIERTO SIN PROBLEMAS
+![](contenido_fichero_pdf.jpg)
 
 La sentencia del comando para cifrar es **gpg -e -u "emisor" -r "receptor" <fichero>**:
 
@@ -292,8 +292,8 @@ Como podremos comprobar, si listamos el directorio actual, comprobaremos que se 
 > -rw-rw-r-- 1 guillevr guillevr  938092 dic  3 18:29 **2022_YZF1000R1SPL_es_ES.pdf.gpg**     
 
 
-# CAPTURA PANTALLA DEL FICHERO NORMAL Y EL FICHERO CIFRADO
-# CAPTURA PANTALLA DEL FICHERO ABIERTO DEL CUAL NO SE PUEDE VER EL CONTENIDO.
+![](fichero_sin_cifrar_y_cifrado.jpg)
+![](contenido_fichero_cifrado.jpg)
 
 ## Descifrar documentos
 
@@ -310,7 +310,7 @@ Comprobamos que le haya llegado al Receptor el correo perfectamente:
 
 Nos vamos al equipo Receptor e intentamos abrir el fichero sin descifrarlo:
 
-# CAPTURA PANTALLA DEL FICHERO ABIERTO DEL CUAL NO SE PUEDE VER EL CONTENIDO.
+![](contenido_fichero_cifrado.jpg)
 
 Desde el equipo Receptor, descifraremos el fichero con el sentencia **gpg -d <nombre_fichero>** donde la opcion **-d** significa "descifrar / desencriptar":
 
@@ -318,7 +318,7 @@ Desde el equipo Receptor, descifraremos el fichero con el sentencia **gpg -d <no
 
 Tras ejecutarlo, nos pedirá la contraseña que introdujimos anteriormente al crear la clave privada, la cual nos va a hacer falta para descifrar el fichero.
 
-# AÑADIR CAPTURA DONDE PIDE LA CONTRASEÑA PARA Descifrar
+![](frase_de_paso_para_descifrar.jpg)
 
 Una vez desencriptado, ya podríamos ver el contenido si fuera texto plano, pero en mi caso, al ser un fichero pdf, debemos volver a ejecutar la sentencia anterior pero redirigiendo la salida a un fichero con extension **.pdf**.
 
@@ -330,6 +330,9 @@ Ahora, comprobamos que podemos ver el contenido del fichero correctamente. Nos v
 
 # Añadir captura donde se encuentra el fichero desencriptado y donde se puede comprobar que abre perfectamente para ver su contenido.
 
+![](fichero_descifrado.jpg)
+
+![](Contenido_fichero_descifrado.jpg)
 
 ## Eliminar claves publicas y privadas
 
@@ -373,8 +376,6 @@ Para eliminar las claves privadas del equipo ejecutaremos la sentencia **gpg --d
 > guillevr@emisor:~$      
 > guillevr@emisor:~$ gpg --list-key      
 > guillevr@emisor:~$  
-
-
 
 
 ### Eliminar clave privada y publica del equipo Receptor
@@ -618,7 +619,7 @@ Enviamos el fichero al equipo del Receptor.
 > guillevr@10.0.2.8's password:      
 > noticias.enc                                                                                            100% 1478   > 608.0KB/s   00:00     
 
-## Descifrar el fichero
+## Descifrar fichero
 
 Para ello, ejecutaremos el comando **openssl rsautl -descryot -in <nombre_fichero.enc> -out <nombre_fichero.txt> -inkey <clave_privada>**.
 
