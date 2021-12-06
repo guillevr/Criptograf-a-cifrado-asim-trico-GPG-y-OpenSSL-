@@ -470,3 +470,87 @@ Comprobaremos que se ha creado correctamente el fichero:
 
 > guillevr@receptor:~$ ls -l | grep "receptor.pem"     
 > -rw------- 1 root     root        1766 dic  6 22:06 receptor.pem    
+
+## Exportar la clave pública para enviarla
+
+OpenSSl genera el par de claves (la clave publica y privada) en un mismo fichero, tendremos que extraer la clave publica para poder enviarla, ya que si envias el fichero que acabamos de generar, cualquiera podría descifrar los archivos/ficheros.
+
+Para ello, ejecutaremos el comando **sudo openssl rsa -in <nombre_fichero.pem> -pubout -out <nombre_fichero.pem>**
+
+Donde:
+- **rsa** -> Indicamos el algoritmo que vamos a utilizar.
+- **-in <nombre_fichero.pem>** -> Sirve para indicar el fichero donde se encuentra el par de claves.
+- **-pubout** -> Indicamos que extraiga la clave pública del fichero.
+- **-out <nombre_fichero.pem>** -> Indicamos donde queremos guardar la clave publica extraida.
+
+Una vez hayamos ejecutado el comando, nos pedirá que introduzcamos la clave de paso creada anteriormente.
+
+### Extraer la clave pública del equipo emisor
+
+> guillevr@emisor:~$ sudo openssl rsa -in emisor.pem -pubout -out emisor_public.pem      
+> [sudo] contraseña para guillevr:      
+> Enter pass phrase for emisor.pem:     
+> writing RSA key     
+
+Comprobamos que se ha creado correctamente el fichero con la clave publica.
+
+> guillevr@emisor:~$ ls -l | grep "emisor_public"      
+> -rw-r--r-- 1 root     root         451 dic  6 22:17 emisor_public.pem     
+> guillevr@emisor:~$      
+> guillevr@emisor:~$ cat emisor_public.pem      
+> -----BEGIN PUBLIC KEY-----     
+> MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsVnsNMov5/oG5/RMEfgK     
+> qtr+J/AqVfLle03yHNFN2LbAX6VQOmD81mag/0NV/VrjGLyU+m8/nOae7FpaBeJg     
+> LFZni9cLC9LPPdSmGGeU2b8o6MZID9qIsxREhxXlI72mbI/OU8C1BgBk2+f3zmF0     
+> dIcGiSnkzjOSq6ARY83GVLN2lGQS1Dk1Ts0XUlD424spf9hd7qlRxPbFs5yRILSa     
+> Iiwv5+7lkd5v838fqDTXruVSGcmdZWpsNltSQV7NgcjEW+cUGl/pWa7Uu5I3PD+9     
+> gxpwbwVdYH7Kvou/9I8Q0t9L11EfS/7ynvjq6JD90MYZCEACxnSPqEKDFM9C94FX     
+> ewIDAQAB     
+> -----END PUBLIC KEY-----     
+
+### Extraer la clave publica del equipo receptor
+
+> guillevr@receptor:~$ sudo openssl rsa -in receptor.pem -pubout -out receptor_public.pem     
+> [sudo] contraseña para guillevr:     
+> Enter pass phrase for receptor.pem:    
+> writing RSA key    
+
+Comprobamos que se ha creado correctamente el fichero con la clave publica.
+
+> guillevr@receptor:~$ ls -l | grep "receptor_public"    
+> -rw-r--r-- 1 root     root         451 dic  6 22:21 receptor_public.pem    
+> guillevr@receptor:~$     
+> guillevr@receptor:~$ cat receptor_public.pem     
+> -----BEGIN PUBLIC KEY-----    
+> MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA16950Q5kCEpF5pAKooD6    
+> Tabv1TqC94nrxVOUmFL9PyxeSvbr9cFJgGuy9TNZGs8wNCpfGYSai+hnWvWEYdx3    
+> /baN1N5B79Wtl6vxdE5siJsrf1+7ePCwIn5t0vCda+r35po9gSNUAx+oO0yTWnEJ    
+> MLreXw3Tj+4VxYHN6GYDbnEtTMBvTJ/l0cln8uwDaiehKL3fvPZ3rGoctRSuH3FM    
+> 5SxBRFwA2uqCSljT3kiuVGRnY+99CyRQBZ87B9Fb4Qfi9PdZJqHjlxIV6zKeiLgO    
+> gvDCgnn8FnGu8ahjmB6mPvizM0HBDuspmzf04OAvIHqkTeYtjfA775IkCWj9zlyD    
+> wwIDAQAB    
+> -----END PUBLIC KEY-----    
+
+### Intercambiamos las claves de los equipos
+
+Enviamos la clave publica del Emisor al Receptor:
+
+> guillevr@emisor:~$ scp emisor_public.pem guillevr@10.0.2.8:~     
+> guillevr@10.0.2.8's password:      
+> emisor_public.pem                                     100%  451   243.9KB/s   00:00       
+
+Comprobamos en el equipo Receptor que la clave publica del Emisor ha llegado perfectamente:
+
+> guillevr@receptor:~$ ls -l | grep "emisor"     
+> -rw-r--r-- 1 guillevr guillevr     451 dic  6 22:26 emisor_public.pem     
+
+Enviamos la clave publica del Receptor al Emisor:
+
+> guillevr@receptor:~$ scp receptor_public.pem guillevr@10.0.2.7:~   
+> guillevr@10.0.2.7's password:    
+> receptor_public.pem                                      100%  451   187.7KB/s   00:00       
+
+Comprobamos en el equipo Emisor que la clave publica del Receptor ha llegado perfectamente:
+
+> guillevr@emisor:~$ ls -l | grep "receptor"     
+> -rw-r--r-- 1 guillevr guillevr     451 dic  6 22:29 receptor_public.pem     
