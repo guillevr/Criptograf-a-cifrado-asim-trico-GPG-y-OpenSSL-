@@ -554,3 +554,42 @@ Comprobamos en el equipo Emisor que la clave publica del Receptor ha llegado per
 
 > guillevr@emisor:~$ ls -l | grep "receptor"     
 > -rw-r--r-- 1 guillevr guillevr     451 dic  6 22:29 receptor_public.pem     
+
+
+### Cifrar fichero
+
+Lo primero que haremos es crear un fichero de texto con contenido. En mi caso, voy a coger noticias de internet y las voy a añadir al fichero.
+
+#### Crear fichero en el equipo Emisor
+> guillevr@emisor:~$ gedit noticias.txt     
+> guillevr@emisor:~$      
+> guillevr@emisor:~$ ls -l | grep "noticias.txt"      
+> -rw-rw-r-- 1 guillevr guillevr    1478 dic  6 22:58 noticias.txt     
+> guillevr@emisor:~$      
+> guillevr@emisor:~$ cat noticias.txt      
+> 1. Sánchez pide "cumplir de pe a pa" la Constitución mientras sus socios de Gobierno la "impugnan"     
+>
+> Casado acusa al presidente de ser "quien más ha atacado" la Carta Magna en 40 años.     
+>
+> 2. La crisis interna aleja al PP de la mayoría absoluta con Vox     
+>
+> Los partidos de Casado y Abascal obtendrían hoy 173 escaños y dejarían atrás la mayoría absoluta que se les > pronosticaba desde septiembre     
+>
+> 3. El Gobierno da marcha atrás y renuncia a impulsar la ley de la Corona     
+>
+> Pedro Sánchez aplaza cualquier reforma constitucional de calado por falta de apoyos     
+>
+> 4. La luz vuelve a dispararse a las puertas del gran pico de consumo navideño     
+>
+> El precio del megavatio hora ha sumado 17 días consecutivos por encima de los 200 euros y va camino de romper el récord > histórico de octubre justo cuando hogares y empresas consumen más electricidad.     
+>
+> 5. Así demostró Antonio la inocencia de su hijo tras nueve años en prisión     
+>
+> José Antonio Valdivielso fue condenado por dos violentos atracos en base al testimonio de las víctimas y al análisis > que hizo la Policía de una grabación. Su padre no cejó hasta encontrar al verdadero culpable     
+>
+> 6. La despedida de Pablo Isla, 'el deseado'     
+>
+> Esta semana ha alabado la generosidad de Amancio Ortega por su salida bien pagada. Y el Ibex se lo rifa. Pero en 2011 > decía querer quedarse en Galicia "para siempre". El coautor de 'Pablo Isla: En el corazón de Zara' retrata al > directivo. Un empresario cercano a Ortega: "Ha ganado Flora"     
+> guillevr@emisor:~$     
+
+ 
