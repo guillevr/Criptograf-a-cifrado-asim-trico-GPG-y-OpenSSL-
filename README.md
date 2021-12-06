@@ -662,3 +662,15 @@ Listo, ya está desenciptado el fichero. Solo queda comprobar que podemos ver su
 > 6. La despedida de Pablo Isla, 'el deseado'       
 >
 > Esta semana ha alabado la generosidad de Amancio Ortega por su salida bien pagada. Y el Ibex se lo rifa. Pero en 2011 decía querer quedarse en Galicia "para siempre". El coautor de 'Pablo Isla: En el corazón de Zara' retrata al directivo. Un empresario cercano a Ortega: "Ha ganado Flora"       
+
+# Enlace al video de youtube
+https://youtu.be/UaN6DrZaxDo
+
+# Bibliografía
+
+- https://www.gnupg.org/gph/es/manual/book1.html
+- https://www.openssl.org/docs/manmaster/
+- https://blog.pleets.org/article/cifrado-con-llave-encriptada-openssl
+- https://www.redeszone.net/tutoriales/seguridad/cifra-archivos-de-forma-sencilla-con-openssl/
+- https://es.wikipedia.org/wiki/OpenSSL
+- https://www.genbeta.com/desarrollo/manual-de-gpg-cifra-y-envia-datos-de-forma-segura
